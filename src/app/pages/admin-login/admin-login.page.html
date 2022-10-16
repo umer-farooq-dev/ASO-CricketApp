@@ -1,0 +1,38 @@
+
+
+<ion-content class="main-wrapper">
+
+    <!-- ...:::Start Login Section:::... -->
+    <div class="login-section">
+        <div class="container">
+            <!-- Start User Event Area -->
+            <div class="login-wrapper">
+                <div class="section-content">
+                    <h1 class="title">Welcome Back Admin</h1>
+                    <p>Login with your account to continue.</p>
+                </div>
+                <form action="" class="default-form-wrapper">
+                    <ul class="default-form-list">
+                        <li class="single-form-item">
+                            <label for="name" class="visually-hidden">Name</label>
+                            <input type="text"  [(ngModel)]="user.email" name="e"d="name" placeholder="Email" value="">
+                          
+                        </li>
+                        <li class="single-form-item">
+                            <label for="password" class="visually-hidden">Password</label>
+                            <input type="password" [(ngModel)]="user.pass" name="p" id="password" placeholder="Password" value="">
+                           
+                        </li>
+                    </ul>
+                </form>
+                <span class="devide-text"></span>
+
+                <a (click)="login()" class="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center">LogIn</a>
+                </div>
+
+        </div>
+    </div>
+    <!-- ...:::End User Event Section:::... -->
+
+
+</ion-content>

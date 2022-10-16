@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ReportModal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- ...:::Start Contact Section:::... -->
+<div class="contact-section section-gap-top-30">
+  <div class="container">
+  
+  
+  
+      <!-- Start User Event Area -->
+      <div class="login-wrapper">
+  
+          <form action="#" class="default-form-wrapper profile-wrapper">
+              <ul class="default-form-list">
+                
+                <ion-item>
+                  <ion-checkbox slot="start" (ionChange)="change($event.target,'a')" [(ngModel)]="report.too_many_ads" ></ion-checkbox>
+                  <ion-label>Too Many Ads</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox slot="start" (ionChange)="change($event.target,'ss')" [(ngModel)]="report.slow_streaming"></ion-checkbox>
+                  <ion-label>Slow Streaming</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-checkbox slot="start" (ionChange)="change($event.target,'nw')"                   [(ngModel)]="report.streaming_not_working"></ion-checkbox>
+                  <ion-label>Streaming not working</ion-label>
+                </ion-item>
+
+
+                  <li class="single-form-item">
+                      <label for="gender" class="visually-hidden">Description</label>
+                      <textarea name="d" id="ds" name="description" [(ngModel)]="report.description" placeholder="description"></textarea>
+                     
+                  </li>
+  
+
+  
+              </ul>
+
+          </form>
+          <a (click)="ConfirmSave()"  class="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Report</a>
+      </div>
+  
+  </div>
+  </div>
+</ion-content>

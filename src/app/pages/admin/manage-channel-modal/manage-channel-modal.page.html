@@ -1,0 +1,71 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{id==0 || id==undefined?'Add Channel':'Update Channel'}}</ion-title>
+    <ion-buttons slot="primary">    
+      <ion-button (click)="this.modal.dismiss();">  
+        <ion-icon slot="icon-only" name="close-outline" ></ion-icon>
+      </ion-button>     
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div class="offcanvas-overlay"></div>
+
+<!-- ...:::Start Contact Section:::... -->
+<div class="contact-section section-gap-top-30">
+<div class="container">
+
+
+
+    <!-- Start User Event Area -->
+    <div class="login-wrapper">
+
+        <form action="#" class="default-form-wrapper profile-wrapper">
+            <ul class="default-form-list">
+                <li class="single-form-item">
+                    <label for="name" class="visually-hidden">name</label>
+                    <input type="text" name="title" [(ngModel)]="channel.name" id="name" placeholder="Title">
+                   
+                </li>
+          
+                <li class="single-form-item">
+                    <label for="number" class="visually-hidden">iframe</label>
+                    <input type="text" id="iframe" name="ifram" [(ngModel)]="channel.iframe" placeholder="iframe">
+                    <!-- <span class="icon"><i class="icon icon-carce-phone"></i></span> -->
+                </li>
+
+            </ul>
+            <div class="profile-card-section section-gap-top-25">
+              <ion-buttons slot="primary" *ngIf="channel.image==''">    
+                <ion-button (click)="AddImage()">  
+                  <ion-icon slot="icon-only"  size="large" name="image-outline"></ion-icon>  
+                </ion-button>     
+              </ion-buttons>  
+              <img [src]="this.channel.image" *ngIf="channel.image" height="40px" width="40px"/>
+
+              <ion-buttons slot="primary" *ngIf="channel.image">    
+                <ion-button (click)="channel.image=''">  
+                  
+                  <ion-icon slot="icon-only"  size="small" name="close-outline"></ion-icon>  
+                </ion-button>     
+              </ion-buttons> 
+          </div>
+          <!-- <ul class="shipping-method-lists" *ngIf="id !=0 || id !=undefined">
+            <li class="shipping-method-list">
+                <input id="courier" type="checkbox" [(ngModel)]="channel.isVisible" name="selector">
+                <label for="courier">is Visible<span></span></label>
+                <div class="check"></div>
+            </li>
+        </ul> -->
+        </form>
+        <a (click)="id==0 || id==undefined?ConfirmSave():ConfirmUpdate()"  class="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">{{id==0 || id==undefined?"Save":"Update"}}</a>
+    </div>
+
+</div>
+</div>
+</ion-content>

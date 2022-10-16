@@ -1,0 +1,54 @@
+
+
+<ion-header  class="ion-no-border">  
+  <ion-toolbar color="light">   
+    <ion-title style="padding-left: 15px">Settings</ion-title>  
+    <ion-buttons slot="primary">    
+      <ion-button (click)="login()">  
+        <ion-icon slot="icon-only" name=""></ion-icon>  
+      </ion-button>     
+    </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>  
+
+<ion-content>
+
+  <!-- <div class="form-divider"></div> -->
+   <ion-list>
+    <ion-list-header></ion-list-header>
+
+       <ion-item button (click)="rateApp()">
+        <ion-icon name="star-half-outline"></ion-icon>
+        <ion-label>
+          Rate Us
+        </ion-label>
+      </ion-item>
+
+      <ion-item button>
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-label>
+          Contact Us
+        </ion-label>
+      </ion-item>
+
+      <ion-item button (click)="shareApp()">
+        <ion-icon name="share-social-outline"></ion-icon>
+        <ion-label>
+          Share
+        </ion-label>
+      </ion-item>
+
+      <ion-item button>
+        <ion-icon name="document-text-outline"></ion-icon>
+        <ion-label>
+          Privacy policy
+        </ion-label>
+      </ion-item>
+
+ 
+    <!-- <ion-item>
+      <small class="text-center"> {{}}</small>
+    </ion-item> -->
+   </ion-list>
+
+</ion-content>

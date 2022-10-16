@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "996853922668",
+    "firebase_url": "https://aso-cricketapp-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aso-cricketapp",
+    "storage_bucket": "aso-cricketapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996853922668:android:83c24e663b4405860f9149",
+        "android_client_info": {
+          "package_name": "com.asocricketapp.ibsoft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996853922668-tljt8vr79hrk1nemp8kqjoppb70rh6u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCfsQj-rB6tlrqwVvKI2Wfshl9hnJNZTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996853922668-tljt8vr79hrk1nemp8kqjoppb70rh6u0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

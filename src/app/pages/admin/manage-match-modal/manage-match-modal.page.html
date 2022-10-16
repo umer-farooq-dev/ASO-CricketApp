@@ -1,0 +1,91 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{id==0 || id==undefined?'Add Match':'Update Match'}}</ion-title>
+    <ion-buttons slot="primary">    
+      <ion-button (click)="this.modal.dismiss();">  
+        <ion-icon slot="icon-only" name="close-outline" ></ion-icon>
+      </ion-button>     
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div class="offcanvas-overlay"></div>
+
+<!-- ...:::Start Contact Section:::... -->
+<div class="contact-section section-gap-top-30">
+<div class="container">
+
+
+
+    <!-- Start User Event Area -->
+    <div class="login-wrapper">
+
+        <form action="#" class="default-form-wrapper profile-wrapper">
+            <ul class="default-form-list">
+                <li class="single-form-item">
+                    <label for="name" class="visually-hidden">Title</label>
+                    <input type="text" name="title" [(ngModel)]="match.title" id="name" placeholder="Title">
+                   
+                </li>
+                <li class="single-form-item">
+                    <label for="email" class="visually-hidden">Stadium </label>
+                    <input type="email" id="email" name="Stadium" [(ngModel)]="match.stadium" placeholder="Stadium">
+                    
+                </li>
+                <li class="single-form-item">
+                    <label for="number" class="visually-hidden">iframe</label>
+                    <input type="text" id="iframe" name="ifram" [(ngModel)]="match.iframe" placeholder="iframe">
+                    <!-- <span class="icon"><i class="icon icon-carce-phone"></i></span> -->
+                </li>
+                <li class="single-form-item">
+                    <label for="gender" class="visually-hidden">Description</label>
+                    <textarea name="d" id="ds" name="description" [(ngModel)]="match.description" placeholder="description"></textarea>
+                   
+                </li>
+
+                <li class="single-form-item">
+                  <label for="number" class="visually-hidden">Date</label>
+                  <input type="date" id="ime" name="date" [(ngModel)]="match.date"  placeholder="Date">
+                  <!-- <span class="icon"><i class="icon icon-carce-phone"></i></span> -->
+              </li>
+
+              <li class="single-form-item">
+                <label for="number" class="visually-hidden">Time</label>
+                <input type="time" id="ifre" name="time" [(ngModel)]="match.time" placeholder="Time">
+                <!-- <span class="icon"><i class="icon icon-carce-phone"></i></span> -->
+            </li>
+
+            </ul>
+            <div class="profile-card-section section-gap-top-25">
+              <ion-buttons slot="primary" *ngIf="match.image==''">    
+                <ion-button (click)="AddImage()">  
+                  <ion-icon slot="icon-only"  size="large" name="image-outline"></ion-icon>  
+                </ion-button>     
+              </ion-buttons>  
+              <img [src]="this.match.image" *ngIf="match.image" height="40px" width="40px"/>
+              <ion-buttons slot="primary" *ngIf="match.image">    
+                <ion-button (click)="match.image=''">  
+                  
+                  <ion-icon slot="icon-only"  size="small" name="close-outline"></ion-icon>  
+                </ion-button>     
+              </ion-buttons> 
+          </div>
+          <!-- <ul class="shipping-method-lists" *ngIf="id !=0 || id !=undefined">
+            <li class="shipping-method-list">
+                <input id="courier" type="checkbox" [(ngModel)]="match.isVisible" name="selector">
+                <label for="courier">is Visible<span></span></label>
+                <div class="check"></div>
+            </li>
+        </ul> -->
+        </form>
+        <a (click)="id==0 || id==undefined?ConfirmSave():ConfirmUpdate()"  class="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Save</a>
+    </div>
+
+</div>
+</div>
+</ion-content>

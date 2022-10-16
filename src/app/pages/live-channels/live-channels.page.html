@@ -1,0 +1,65 @@
+
+
+
+
+<ion-header  class="ion-no-border">  
+  <ion-toolbar color="light">   
+    <ion-title style="padding-left: 15px">Live Channels</ion-title>  
+    <ion-buttons slot="primary">    
+      <ion-button (click)="this.nav.goto_notifications()">  
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>  
+      </ion-button>     
+    </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>  
+
+
+<ion-content>
+
+  <main class="main-wrapper">
+
+
+
+
+
+    <div class="catagories-section section-gap-top-25">
+      <h4  *ngIf="channelsList.length==0" style="text-align:center ;">No Channels Found!</h4>
+        <div class="container" *ngIf="channelsList.length>0">
+
+
+         
+<hr class="line">
+           
+<ion-grid >
+  <ion-row >
+    <ion-col size="5" *ngFor="let item of channelsList" style="margin:10px 10px 10px 15px">
+      <ion-card >
+        <!-- <img src="assets\content\images\channels\tensportslive.png" alt="ion"> -->
+        <img [src]="item.image" alt="ion">
+
+        <ion-card-header>
+          <ion-card-title class="ion-text-center" >{{item.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-footer>
+          <ion-row>
+            <ion-col size="12"> 
+                        <ion-button fill="clear" color="danger" expand="full" (click)="liveChannel(item.iframe)">       
+                                <ion-icon  color="danger" slot="icon-only" name="play"></ion-icon>  
+                      Watch
+                            </ion-button>     
+                    </ion-col>
+          </ion-row>
+        </ion-footer>
+      </ion-card>
+    </ion-col>
+   
+
+  </ion-row>
+</ion-grid>
+
+
+        </div>
+    </div>
+
+</main>
+</ion-content>

@@ -1,0 +1,202 @@
+<ion-header  class="ion-no-border">  
+  <ion-toolbar color="light">   
+    <ion-title style="padding-left: 15px">Dashboard</ion-title>  
+    <ion-buttons slot="primary">    
+      <ion-button (click)="this.nav.goto_logout()">  
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>  
+      </ion-button>     
+    </ion-buttons>  
+  </ion-toolbar>  
+</ion-header>  
+
+<ion-segment color="medium" [(ngModel)]="segmentModel">
+  <ion-segment-button value="matches">
+    <ion-label>Matches</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="channels">
+    <ion-label>Channels</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="reports">
+    <ion-label>Reports</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<ion-content>
+
+
+<ng-container *ngIf="segmentModel=='matches'">
+  <ion-item button class="ion-padding" (click)="openMatchModal()">
+    <ion-icon name="add-outline"></ion-icon>
+    <ion-label>
+      Add New 
+    </ion-label>
+  </ion-item>
+
+  <main class="main-wrapper">
+
+    <!-- ...:::Start User Event Section:::... -->
+    <div class="header-section">
+        <div class="container">
+          
+        </div>
+    </div>
+    <!-- ...:::End User Event Section:::... -->
+
+
+    <div class="offcanvas-overlay"></div>
+
+    <!-- ...:::Start Cart Section:::... -->
+    <div class="cart-section section-gap-top-30">
+        <div class="container">
+            <div class="cart-items-wrapper">
+                <ul class="cart-item-list" *ngFor="let item of machesList">
+                  
+                    <li class="single-cart-item" >
+                        <div class="image" (click)="openMatchModal(item.id)">
+                            <!-- <img width="90" height="90" src="assets/content/images/product/small/product-1-small-1.png" alt="image"> -->
+                            <img width="90" height="90" [src]="item.image" alt="image">
+
+                        </div>
+                        <div class="content">
+                            <button class="delete-item" (click)="ConfirmMatchDelete(item.id)">
+                             <ion-icon name="trash"></ion-icon>
+                            </button>
+                            <a  class="title" (click)="openMatchModal(item.id)">{{item.title}}</a>
+                            <div class="details">
+                                <div class="left">
+                                    <span class="brand">{{item.stadium}}</span>
+                                    <span class="price">{{item.date}} - {{item.time}}</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </li>
+
+
+          
+                </ul>
+
+               
+            </div>
+        </div>
+    </div>
+    <!-- ...:::End Cart Section:::... -->
+
+</main>
+</ng-container>
+
+<ng-container *ngIf="segmentModel=='channels'">
+  <ion-item button class="ion-padding" (click)="openChannelModal()">
+    <ion-icon name="add-outline"></ion-icon>
+    <ion-label>
+      Add New 
+    </ion-label>
+  </ion-item>
+
+  <main class="main-wrapper">
+
+    <!-- ...:::Start User Event Section:::... -->
+    <div class="header-section">
+        <div class="container">
+          
+        </div>
+    </div>
+    <!-- ...:::End User Event Section:::... -->
+
+
+    <div class="offcanvas-overlay"></div>
+
+    <!-- ...:::Start Cart Section:::... -->
+    <div class="cart-section section-gap-top-30">
+        <div class="container">
+            <div class="cart-items-wrapper">
+                <ul class="cart-item-list" *ngFor="let item of channelsList">
+                  
+                    <li class="single-cart-item" >
+                        <div class="image" (click)="openChannelModal(item.id)">
+                            <!-- <img width="90" height="90" src="assets/content/images/product/small/product-1-small-1.png" alt="image"> -->
+                            <img width="90" height="90" [src]="item.image" alt="image">
+
+                        </div>
+                        <div class="content">
+                            <button class="delete-item" (click)="ConfirmChannelDelete(item.id)">
+                             <ion-icon name="trash"></ion-icon>
+                            </button>
+                            <a  class="title" (click)="openChannelModal(item.id)">{{item.name}}</a>
+                            <div class="details">
+                                <div class="left">
+                                    <span class="brand">{{item.createdAt}}</span>
+                                    <span class="price">{{item.date}} - {{item.time}}</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+               
+            </div>
+        </div>
+    </div>
+    <!-- ...:::End Cart Section:::... -->
+
+</main>
+</ng-container>
+
+<ng-container *ngIf="segmentModel=='reports'">
+
+
+  <main class="main-wrapper">
+
+    <!-- ...:::Start User Event Section:::... -->
+    <div class="header-section">
+        <div class="container">
+          
+        </div>
+    </div>
+    <!-- ...:::End User Event Section:::... -->
+
+
+    <div class="offcanvas-overlay"></div>
+
+    <!-- ...:::Start Cart Section:::... -->
+    <div class="cart-section section-gap-top-30">
+        <div class="container">
+            <div class="cart-items-wrapper">
+                <ul class="cart-item-list" *ngFor="let item of reportlist">
+                  
+                    <li class="single-cart-item" >
+                        <div class="image" >
+                            <!-- <img width="90" height="90" src="assets/content/images/product/small/product-1-small-1.png" alt="image"> -->
+                            <img width="90" height="90" [src]="item.image" alt="image">
+
+                        </div>
+                        <div class="content">
+                            <button class="delete-item" (click)="ConfirmReportDelete(item.id)">
+                             <ion-icon name="trash"></ion-icon>
+                            </button>
+                            <a  class="title" >{{item.match}}</a>
+                            <div class="details">
+                                <div class="left">
+                                    <span class="brand">{{item.createdAt}}</span>
+                                    <span class="price">{{item.description}}</span>
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+               
+            </div>
+        </div>
+    </div>
+    <!-- ...:::End Cart Section:::... -->
+
+</main>
+</ng-container>
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "ASO CricketApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
