@@ -16,7 +16,7 @@ export class AdmobService {
    const admobOptions: AdmobOptions = {
     bannerAdId: 'ca-app-pub-7021784224754209/2928289040',
     interstitialAdId: 'ca-app-pub-7021784224754209/9302125708',
-    rewardedAdId: 'XXX-XXXX-XXXX',
+    rewardedAdId: 'ca-app-pub-7021784224754209/8014573113',
     isTesting: false,
     autoShowBanner: false,
     autoShowInterstitial: false,

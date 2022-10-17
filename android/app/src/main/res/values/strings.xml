@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">ASO CricketApp</string>
-    <string name="title_activity_main">ASO CricketApp</string>
+    <string name="app_name">Live Cricket TV Sports Stream</string>
+    <string name="title_activity_main">Live Cricket TV Sports Stream</string>
     <string name="package_name">com.asocricketapp.ibsoft</string>
     <string name="custom_url_scheme">com.asocricketapp.ibsoft</string>
 </resources>
