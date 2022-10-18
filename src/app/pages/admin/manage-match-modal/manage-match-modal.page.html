@@ -83,7 +83,7 @@
             </li>
         </ul> -->
         </form>
-        <a (click)="id==0 || id==undefined?ConfirmSave():ConfirmUpdate()"  class="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Save</a>
+        <a (click)="id==0 || id==undefined?ConfirmSave():ConfirmUpdate()"  class="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">{{id==0 || id==undefined?"Save":"Update"}}</a>
     </div>
 
 </div>

@@ -19,6 +19,9 @@
   <ion-segment-button value="reports">
     <ion-label>Reports</ion-label>
   </ion-segment-button>
+  <ion-segment-button value="banner">
+    <ion-label>Banner</ion-label>
+  </ion-segment-button>
 </ion-segment>
 <ion-content>
 
@@ -197,6 +200,17 @@
 
 </main>
 </ng-container>
+
+<ng-container *ngIf="segmentModel=='banner'">
+    <ion-item button class="ion-padding" (click)="comingSoonAlert()">
+      <ion-icon name="add-outline"></ion-icon>
+      <ion-label>
+        Add New Banner
+      </ion-label>
+    </ion-item>
+  
+
+  </ng-container>
 
 
 </ion-content>

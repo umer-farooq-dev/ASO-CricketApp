@@ -5,6 +5,7 @@ import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 import { ModalController, NavParams, ActionSheetController, AlertController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/Api/api.service';
 import { HelperService } from 'src/app/services/helper.service';
+import { LoadingService } from 'src/app/services/loading.service';
 import { ToastService } from 'src/app/services/Toast/toast.service';
 
 @Component({
@@ -31,7 +32,8 @@ export class ManageChannelModalPage implements OnInit {
     private helper:HelperService,
     private toast:ToastService,
     private alert:AlertController,
-    private api:ApiService
+    private api:ApiService,
+    private loading:LoadingService
   ) { 
     let id=navParams.get('id');
     if(id==undefined || id==""){
@@ -189,19 +191,20 @@ export class ManageChannelModalPage implements OnInit {
 
   SaveChannel(){
 
-   
+    this.loading.showLoading("Saving Channel");
     this.UploadBanner().then((road:any)=>{
               this.channel.createdAt=this.helper.getTodayDate();
               this.channel.updatedAt="-";
               this.channel.isVisible=true;
       this.channel.image=road;
                 this.api.saveChannel(this.channel).then((value)=>{
-                 
                     this.toast.show("Saved","e");
                     this.id=0;
                     this.modal.dismiss();
+    this.loading.hide();
+
                  
-                })
+                },(()=>{this.loading.hide();}))
               })
 
   
@@ -237,15 +240,24 @@ async  ConfirmUpdate(){
 }
 
 UpdateChannel(){
-  
-              this.channel.updatedAt=this.helper.getTodayDate();
-              this.channel.isVisible=true;
-                this.api.updateMatch(this.id.toString(),this.channel).then((value)=>{
-                 
-                    this.toast.show("Updated","e");
-                    this.modal.dismiss();
-                 
-                })
+  this.loading.showLoading("Updating Channel");
+
+                this.UploadBanner().then((road:any)=>{
+                  this.channel.updatedAt=this.helper.getTodayDate();
+                  this.channel.isVisible=true;
+                  this.channel.image=road;
+                    this.api.updateChannel(this.id.toString(),this.channel).then((value)=>{
+                        this.toast.show("Updated","e");
+                        this.modal.dismiss();
+    this.loading.hide();
+
+                    },(()=>{
+    this.loading.hide();
+
+                    }))
+                  })
+    
+
 }
 
 checkboxClick(e){

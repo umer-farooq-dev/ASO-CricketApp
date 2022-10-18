@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { AdmobService } from 'src/app/services/admob.service';
 import { ApiService } from 'src/app/services/Api/api.service';
 import { HelperService } from 'src/app/services/helper.service';
+import { LoadingService } from 'src/app/services/loading.service';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { ReportModalPage } from '../report-modal/report-modal.page';
 
@@ -20,12 +21,13 @@ export class LiveMatchPage implements OnInit {
     private helper:HelperService,
     public nav:NavigationService,
     private admobService: AdmobService,
-    private modal:ModalController
+    private modal:ModalController,
+    private loading:LoadingService
 
   ) { }
 
   ngOnInit() {
-
+ 
     let rooms = this.api.getMatchesList();
     rooms.snapshotChanges().subscribe(res => {
       this.matchesList = [];
@@ -35,7 +37,7 @@ export class LiveMatchPage implements OnInit {
        this.matchesList.push(a);
   
       })
-    
+ 
     })
 
 this.admobService.createBannerView();

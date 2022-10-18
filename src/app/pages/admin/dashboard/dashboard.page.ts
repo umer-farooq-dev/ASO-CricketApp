@@ -224,7 +224,26 @@ ngOnInit() {
         })
         alert.present();
         }
-  
+
+
+ 
+        async  comingSoonAlert(){
+          let alert=await this.alert.create({
+            
+            message:"Coming soon...",
+            buttons:[{
+              role:"cancel",
+              text:"OK",
+              cssClass:"text-danger",
+              handler:(()=>{
+      
+              })
+            },
+
+          ]
+          })
+          alert.present();
+          }
    
 
 }

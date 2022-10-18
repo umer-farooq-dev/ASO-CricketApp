@@ -4,6 +4,7 @@ import { CameraOptions,Camera } from '@awesome-cordova-plugins/camera/ngx';
 import { ActionSheetController, AlertController, ModalController, NavParams } from '@ionic/angular';
 import { ApiService } from 'src/app/services/Api/api.service';
 import { HelperService } from 'src/app/services/helper.service';
+import { LoadingService } from 'src/app/services/loading.service';
 import { ToastService } from 'src/app/services/Toast/toast.service';
 
 @Component({
@@ -34,7 +35,9 @@ export class ManageMatchModalPage implements OnInit {
     private helper:HelperService,
     private toast:ToastService,
     private alert:AlertController,
-    private api:ApiService
+    private api:ApiService,
+    private loading:LoadingService
+
   ) { 
     let id=this.navParams.get('id');
     if(id==undefined || id==""){
@@ -207,7 +210,7 @@ export class ManageMatchModalPage implements OnInit {
 
   SaveMatch(){
 
-   
+  this.loading.showLoading("Saving Match");
     this.UploadBanner().then((road:any)=>{
               this.match.createdAt=this.helper.getTodayDate();
               this.match.updatedAt="-";
@@ -255,15 +258,21 @@ async  ConfirmUpdate(){
 }
 
 UpdateMatch(){
+  this.loading.showLoading("Updating Match");
   
-              this.match.updatedAt=this.helper.getTodayDate();
-              this.match.isVisible=true;
-                this.api.updateMatch(this.id.toString(),this.match).then((value)=>{
-                 
-                    this.toast.show("Updated","e");
-                    this.modal.dismiss();
-                 
-                })
+
+                this.UploadBanner().then((road:any)=>{
+                  this.match.updatedAt=this.helper.getTodayDate();
+                  this.match.isVisible=true;
+                  this.match.image=road;
+                    this.api.updateMatch(this.id.toString(),this.match).then((value)=>{
+                     
+                        this.toast.show("Updated","e");
+                        this.modal.dismiss();
+                        this.loading.hide();
+                     
+                    },(()=>{this.loading.hide()}))
+                  })
 }
 
 checkboxClick(e){
@@ -272,5 +281,7 @@ checkboxClick(e){
     e.checked = true;
   }
 }
+
+
 
 }
