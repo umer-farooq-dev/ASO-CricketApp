@@ -14,15 +14,27 @@ export class AdmobService {
 
    // Admob options config
    const admobOptions: AdmobOptions = {
-    bannerAdId: 'ca-app-pub-7021784224754209/2928289040',
-    interstitialAdId: 'ca-app-pub-7021784224754209/9302125708',
-    rewardedAdId: 'ca-app-pub-7021784224754209/8014573113',
+    //Old
+    // bannerAdId: 'ca-app-pub-7021784224754209/2928289040',
+    // interstitialAdId: 'ca-app-pub-7021784224754209/9302125708',
+    // rewardedAdId: 'ca-app-pub-7021784224754209/8014573113',
+    // isTesting: false,
+    // autoShowBanner: false,
+    // autoShowInterstitial: false,
+    // autoShowRewarded: false,
+    // adSize: this.admob.AD_SIZE.BANNER,
+    // publisherId:"ca-app-pub-7021784224754209~4432942400"
+
+    //New
+    bannerAdId: 'ca-app-pub-7021784224754209/8850170306',
+    interstitialAdId: 'ca-app-pub-7021784224754209/9683921584',
+    rewardedAdId: 'ca-app-pub-7021784224754209/8370839913',
     isTesting: false,
     autoShowBanner: false,
     autoShowInterstitial: false,
     autoShowRewarded: false,
     adSize: this.admob.AD_SIZE.BANNER,
-    publisherId:"ca-app-pub-7021784224754209~4432942400"
+    publisherId:"ca-app-pub-7021784224754209~1997003254"
   };
 
   // Set admob options

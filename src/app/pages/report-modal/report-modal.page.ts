@@ -81,10 +81,10 @@ id=""
   Validation(){
     if(this.report.description=="" && this.report.slow_streaming==false && this.report.streaming_not_working==false && this.report.too_many_ads==false){
       this.toast.show("Please Choose any reason or describe your report with current streaming",'e');
-     alert(this.report.slow_streaming)
-     alert(this.report.streaming_id)
-     alert(this.report.streaming_not_working)
-     alert(this.report.too_many_ads)
+    //  alert(this.report.slow_streaming)
+    //  alert(this.report.streaming_id)
+    //  alert(this.report.streaming_not_working)
+    //  alert(this.report.too_many_ads)
       return false;
     }
 

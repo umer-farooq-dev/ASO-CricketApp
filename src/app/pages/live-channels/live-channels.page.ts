@@ -54,19 +54,6 @@ this.admobService.showBannerAd();
    
   }
 
-  liveChannel_(){
-    // let options: StreamingVideoOptions = {
-    //   successCallback: () => { console.log('Video played') },
-    //   errorCallback: (e) => { console.log('Error streaming') },
-    //   orientation: 'landscape',
-    //   shouldAutoClose: true,
-    //   controls: false
-    // };
-    //  this.sm.playVideo("https://services.brid.tv/services/iframe/video/973085/23197/33258/0/1/?amp=1",options);
-    // this.sm.playVideo("https://hd.crichd.run/ptv-sports-live-streaming-pk-22",options);
-
-    
-  }
 
   liveChannel(iframe){
     this.admobService.requestInterstitialAd();
